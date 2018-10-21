@@ -98,6 +98,22 @@
     }
   }
 
+  function RandomDoorStrategy() {
+    this.chooseInitialDoor = function() {
+      return randomDoor();
+    }
+
+    this.chooseFinalDoor = function (initialDoor, goatDoor) {
+      var i, possibleDoors = [];
+      for (i = 0; i < NUM_DOORS; ++i) {
+        if (i !== goatDoor) {
+          possibleDoors.push(i);
+        }
+      }
+      return randomElement(possibleDoors);
+    }
+  }
+
   function Player(strategy) {
     var initialDoor, goatDoor;
 
@@ -138,6 +154,10 @@
       sim = new Simulation(new ChangeDoorStrategy(), n);
       sim.run();
       d.getElementById('change-door-result').innerHTML = sim.toString();
+
+      sim = new Simulation(new RandomDoorStrategy(), n);
+      sim.run();
+      d.getElementById('random-door-result').innerHTML = sim.toString();
     }
   };
 }(document));
