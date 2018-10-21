@@ -34,5 +34,5 @@ with this strategy.
 
 On the other hand, retaining the original choice will win you the grand
 prize only if you chose it initially. This happens in 1 of 3 scenarios,
-which yiels 1/3 odds of winning.
+which yields 1/3 odds of winning.
 
